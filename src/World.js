@@ -5,7 +5,7 @@ function World({setCountryName}) {
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: []});
   const [altitude, setAltitude] = useState(0.1);
-  const [color, setColor] = useState(() => feat => 'rgba(200, 0, 0, 0.6)')
+  const [color, setColor] = useState(() => feat => 'rgba(88, 88, 192, 0.6)')
   const [transitionDuration, setTransitionDuration] = useState(1000);
 
   useEffect(() => {
@@ -17,9 +17,9 @@ function World({setCountryName}) {
         setCountries(countries);
 
         setTimeout(() => {
-          setTransitionDuration(4000);
+          setTransitionDuration(3000);
           setAltitude(0.1);
-        }, 3000);
+        }, 2000);
       });
   }, []);
 
@@ -48,7 +48,7 @@ function World({setCountryName}) {
       setAltitude(() => feat => id === feat.__id ? 0.3 : 0.1)
     }}
     onPolygonHover={(e) => {
-      setColor(() => feat => e.__id === feat.__id ? 'rgba(36, 36, 177, 0.8)' :'rgba(200, 0, 0, 0.6)')
+      setColor(() => feat => e.__id === feat.__id ? 'rgba(5, 152, 5, 0.8)' :'rgba(88, 88, 192, 0.6)')
     }}
   />;
 }
